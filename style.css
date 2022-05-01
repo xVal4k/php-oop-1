@@ -32,8 +32,11 @@ header h1 {
 }
 
 .movie_info, .movie_sub_info {
-    width: 30%;
     margin: .5rem auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.movie_info span, .movie_sub_info span{
+    margin: 0 1.5rem;
 }

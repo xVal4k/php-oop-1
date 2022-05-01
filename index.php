@@ -2,7 +2,7 @@
 
 class Movie
 {
-    private $title, $year, $genre, $durationHours, $durationMinutes, $language, $originalLanguage, $rating;
+    private $title, $year, $warningMsg, $genre, $durationHours, $durationMinutes, $language, $originalLanguage, $rating;
 
     public function __construct(string $_title, int $_year)
     {
@@ -22,6 +22,11 @@ class Movie
     public function getYear()
     {
         return $this->year;
+    }
+
+    public function getWrnMsg()
+    {
+        return $this->warningMsg;
     }
 
     public function setGenre(string $_genre)
@@ -123,13 +128,13 @@ $arr_movies = [$movie1, $movie2]
                 <div class="movie">
                     <h2><?php echo $movie->getTitle() ?></h2>
                     <div class="movie_info">
-                        <span><?php echo $movie->getYear() ?></span> -
+                        <span><?php echo $movie->getYear() . $movie->getWrnMsg()?></span> -
                         <span><?php echo $movie->getGenre() ?></span> -
                         <span><?php echo $movie->getDurationHours() . ' ' . $movie->getDurationMinutes() ?></span>
                     </div>
                     <div class="movie_sub_info">
-                        <span>Voto: <?php echo $movie->getRating() ?></span>
-                        <span>Lingua: <?php echo $movie->getLanguage() ?></span>
+                        <span>Voto: <?php echo $movie->getRating() ?></span> -
+                        <span>Lingua: <?php echo $movie->getLanguage() ?></span> -
                         <span>Lingua Originale: <?php echo $movie->getOriginalLanguage() ?></span>
                     </div>
                 </div>
